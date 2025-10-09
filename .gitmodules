@@ -1,0 +1,3 @@
+[submodule "lib/Depth-Anything-ONNX_PeterCdev"]
+	path = lib/Depth-Anything-ONNX_PeterCdev
+	url = git@github.com:PeterCalifano/Depth-Anything-ONNX_PeterCdev.git
