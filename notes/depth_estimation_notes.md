@@ -62,3 +62,11 @@ t(d) = median(d) \hspace{1cm} s(d) = \dfrac{1}{HW} \sum^{HW}_{i=1} |d_i - t(d)|
 $$
 
 Reference that introduced these loss functions (MiDaS): <https://arxiv.org/abs/1907.01341>
+
+### Some notes from experiments
+
+- DepthAnythingV2 requires fine tuning to work well with typical space images where the body is partially or entirely surrounded by black pixels. This is because it is able to correctly distinguish depth only near the most illuminated limb whereas artifacts are always present near the (black) corners of the image. In other words, the model is not capable of identifying and consistently classifying the black pixels as very distant background.
+- Features on the surface are not distinguished in terms of depth neither. However, the general shape is somewhat captured, with limbs predicted to be further than the regions near the centre.
+- For asteroids in close proximity, the prediction fails in really interesting ways which highlight the inadeguancy of the training data in letting the model to generalize to the space domain. Example here:
+![alt text](<Screenshot from 2025-10-19 14-53-42.png>)
+![alt text](image-1.png)
